@@ -1,0 +1,4 @@
+1、首先在安装python的时候需要注意勾选python加入PATH的选项，作为小白自己添加环境变量一直失败，最后还是采用重装的手段完成环境变量的添加。
+   然后可以通过cmd进入终端python检查是否安装成功。
+
+2、需要注意，安装packages时，cmd进入终端之后，不需要python进入python的环境。直接pip install packages就可以了，反而进入python环境之后还会报错。
