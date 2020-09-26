@@ -1,0 +1,35 @@
+#统计WGCNA结果中node的基因出现的频率  
+
+
+from pandas import DataFrame
+import pandas as pd
+#开放行和列的权限，因为后面输出的时候会有...的省略情况出现
+pd.set_option('display.max_rows', None)  # 可以填数字，填None表示'行'无限制
+pd.set_option('display.max_columns', None) # 可以填数字，填None表示'列'无限制
+
+ 
+da_brown = pd.read_table('C:/Users/L/4Lto5L-brown.txt', header=None)
+da_yellow =  pd.read_table('C:/Users/L/5Lto5P-yellow.txt', header=None)
+da_green = pd.read_table('C:/Users/L/5Lto5P-green.txt', header=None)
+
+print(da_brown)
+
+nodes1_brown = da_brown[0].value_counts()
+nodes2_brown = da_brown[1].value_counts()
+
+nodes1_yellow = da_yellow[0].value_counts()
+nodes2_yellow = da_yellow[1].value_counts()
+
+nodes1_green = da_green[0].value_counts()
+nodes2_green = da_green[1].value_counts()
+
+#将该文件输出到指定的目录
+nodes1_brown.to_csv("F:/WGCNA/4L-5P_fromNodes_Brown_sortByCounts.csv",mode='a')
+nodes2_brown.to_csv("F:/WGCNA/4L-5P_toNodes_Brown_sortByCounts.csv",mode='a')
+
+nodes1_yellow.to_csv("F:/WGCNA/5L-5P_fromNodes_yellow_sortByCounts.csv",mode='a')
+nodes2_yellow.to_csv("F:/WGCNA/5L-5P_toNodes_yellow_sortByCounts.csv",mode='a')
+
+nodes1_green.to_csv("F:/WGCNA/5L-5P_fromNodes_green_sortByCounts.csv",mode='a')
+nodes2_green.to_csv("F:/WGCNA/5L-5P_toNodes_green_sortByCounts.csv",mode='a')
+
